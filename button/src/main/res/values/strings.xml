@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="strbtn1">네이트 홈페이지 열기</string>
+    <string name="strbtn2">911 응급전화 걸기</string>
+    <string name="strbtn3">갤러리 열기</string>
+    <string name="strbtn4">끝내기</string>
     <string name="action_settings">Settings</string>
+    <string name="number_text">1234</string>
+    <string name="button0">네이트 홈페이지 열기</string>
+    <string name="button1">911 응급전화 걸기</string>
+    <string name="button2">갤러리 열기</string>
+    <string name="button3">끝내기</string>
 </resources>
