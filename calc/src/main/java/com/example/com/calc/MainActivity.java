@@ -6,15 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText edit1, edit2;
-    Button btnAdd, btnSub, btnMul, btnDiv, btnRem;
     TextView textResult;
-    String num1, num2;
-    Integer result;
-
+    String inputNum1, inputNum2;
+    Double result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,40 +25,45 @@ public class MainActivity extends AppCompatActivity {
         edit1 = (EditText) findViewById(R.id.Edit1);
         edit2 = (EditText) findViewById(R.id.Edit2);
         textResult = (TextView) findViewById(R.id.TextResult);
-
-
-
     }
 
     public void onClick(View view){
         // Button button = (Button)findViewById(view.getId());
 
-        num1 = edit1.getText().toString();
-        num2 = edit2.getText().toString();
+        inputNum1 = edit1.getText().toString();
+        inputNum2 = edit2.getText().toString();
+
+        if(inputNum1.isEmpty() || inputNum2.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "입력해 주세요... ㅜㅜ", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        double num1 = Double.parseDouble(inputNum1);
+        double num2 = Double.parseDouble(inputNum2);
 
         switch (view.getId()){
-            case R.id.BtnAdd:
-                result = Integer.parseInt(num1) + Integer.parseInt(num2);
+            case R.id.BtnAdd: result = num1 + num2;
                 break;
-            case R.id.BtnSub:
-                result = Integer.parseInt(num1) - Integer.parseInt(num2);
+            case R.id.BtnSub: result =  num1 - num2;
                 break;
-            case R.id.BtnMul:
-                result = Integer.parseInt(num1) * Integer.parseInt(num2);
+            case R.id.BtnMul: result =  num1 * num2;
                 break;
             case R.id.BtnDiv:
-                if(num2 == "0")
+                if(num2 == 0.0) {
+                    Toast.makeText(getApplicationContext(), "0은 안돼요 ㅜㅜ", Toast.LENGTH_SHORT).show();
                     return;
-                result = Integer.parseInt(num1) / Integer.parseInt(num2);
+                }
+                result = num1 / num2;
                 break;
             case R.id.BtnRem:
-                if(num2 == "0")
+                if(num2 == 0.0) {
+                    Toast.makeText(getApplicationContext(), "0은 안돼요 ㅜㅜ", Toast.LENGTH_SHORT).show();
                     return;
-                result = Integer.parseInt(num1) % Integer.parseInt(num2);
+                }
+                result =  num1 % num2;
                 break;
         }
 
         textResult.setText("계산 결과 : " + result.toString());
-
     }
 }
