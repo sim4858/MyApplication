@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">calc</string>
+    <string name="action_settings">calc</string>
+    <string name="BtnSub">빼기</string>
+    <string name="BtnAdd">더하기</string>
+    <string name="BtnMul">곱하기</string>
+    <string name="BtnDiv">나누기</string>
+    <string name="BtnRem">나머지 값</string>
+</resources>
