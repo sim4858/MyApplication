@@ -180,9 +180,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="계산 결과"
+            android:text="계산 결과 : "
             android:id="@+id/TextResult"
-            android:layout_span="5"/>
+            android:layout_span="5"
+            android:focusable="false"
+            android:textColor="#ff0000" />
     </TableRow>
 
 </TableLayout>
