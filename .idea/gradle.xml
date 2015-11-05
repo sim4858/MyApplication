@@ -11,7 +11,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/calc2" />
+            <option value="$PROJECT_DIR$/dialog" />
             <option value="$PROJECT_DIR$/image" />
+            <option value="$PROJECT_DIR$/webview" />
           </set>
         </option>
       </GradleProjectSettings>
