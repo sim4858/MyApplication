@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         String str = readDiary(fileName);
         edtDiary.setText(str);
 
+
         dp.init(cYear, cMonth, cDay, new DatePicker.OnDateChangedListener() {
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 fileName = Integer.toString(year) + "_" + Integer.toString(monthOfYear + 1) + "_"
