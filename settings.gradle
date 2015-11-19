@@ -1,1 +1,1 @@
-include ':calc2', ':image', ':webview', ':dialog', ':diary'
+include ':calc2', ':image', ':webview', ':dialog', ':diary', ':intent'

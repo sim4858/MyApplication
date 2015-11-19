@@ -21,14 +21,16 @@
             android:layout_height="wrap_content"
             android:calendarViewShown="false"></DatePicker>
 
-        <EditText
-            android:id="@+id/edtDiary"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#00ff00"
-            android:lines="8"/>
+
 
     </LinearLayout>
+    <EditText
+        android:id="@+id/edtDiary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00ff00"
+        android:lines="8"
+        android:layout_weight="2"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
