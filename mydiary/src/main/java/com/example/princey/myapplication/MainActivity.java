@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         int cMonth = cal.get(Calendar.MONTH);
         int cDay = cal.get(Calendar.DAY_OF_MONTH);
 
-        fileName = Integer.toString(cYear) + "_" + Integer.toString(cMonth + 1) + "_"
-                + Integer.toString(cDay) + ".txt";
+        fileName = Integer.toString(cYear) + "년_" + Integer.toString(cMonth + 1) + "월_"
+                + Integer.toString(cDay) + "일.txt";
         String str = readDiary(fileName);
         editText.setText(str);
         textCom = Integer.toString(cYear) + "년 " + Integer.toString(cMonth + 1) + "월 "
@@ -93,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
                         int year = dp.getYear();
                         int monthOfYear = dp.getMonth();
                         int dayOfMonth = dp.getDayOfMonth();
-                        fileName = Integer.toString(year) + "_" + Integer.toString(monthOfYear + 1) + "_"
-                                + Integer.toString(dayOfMonth) + ".txt";
+                        fileName = Integer.toString(year) + "년_" + Integer.toString(monthOfYear + 1) + "월_"
+                                + Integer.toString(dayOfMonth) + "일.txt";
                         String str = readDiary(fileName);
                         editText.setText(str);
                         textCom = Integer.toString(year) + "년 " + Integer.toString(monthOfYear + 1) + "월 "
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        File deleteFile = new File(sdPath + "/mydir/" + fileName);
+                        File deleteFile = new File(sdPath + "/" + fileName);
                         deleteFile.delete();
                         editText.setText("");
                         button.setText("저장");
