@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    FileOutputStream outFs = openFileOutput(sdPath + "/" + fileName, Context.MODE_PRIVATE);
+                    //FileOutputStream outFs = openFileOutput(sdPath + "/" + fileName, Context.MODE_PRIVATE);
+                    FileOutputStream outFs = new FileOutputStream(new File(sdPath + "/" + fileName));
                     String str = editText.getText().toString();
                     outFs.write(str.getBytes());
                     outFs.close();
@@ -114,12 +115,14 @@ public class MainActivity extends AppCompatActivity {
         String diaryStr = null;
         FileInputStream inFs;
         try {
-            inFs = openFileInput(sdPath + "/" + fileName);
+            //inFs = openFileInput(sdPath + "/" + fileName);
+            inFs = new FileInputStream(new File(sdPath + "/" + fileName));
             byte[] txt = new byte[500];
             inFs.read(txt);
             inFs.close();
             diaryStr = (new String(txt)).trim();
             button.setText("수정");
+            inFs.close();
         }catch(IOException e) {
             editText.setHint("일기 없음");
             button.setText("저장");
@@ -142,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.reRead:
-                readDiary(fileName);
+                String str = readDiary(fileName);
+                editText.setText(str);
                 return true;
             case R.id.deleteDiary:
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
